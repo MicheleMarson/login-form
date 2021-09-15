@@ -15,6 +15,11 @@ a, input {
   transition: all 0.3s ease-in;
 }
 
+
+a:active{
+  background: none;
+}
+
 body {
   font-family: 'Sansita', sans-serif;
   display: -webkit-box;
