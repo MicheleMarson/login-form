@@ -22,6 +22,10 @@ $(() => {
   const validate = (input, text) => {
     $(input).addClass("required")
     validateMsg.text(text)
+    $(input).click(function(){
+      $(this).removeClass("required")
+      validateMsg.text("")
+    })
   }
   
   $("input").change(() => {
@@ -38,6 +42,7 @@ $(() => {
     $("section").removeClass("success")
     if(!email){
       validate("#email", "Email required")
+      
     }else if(!email.match(emailValidation)){
       validate("#email", "Email not valid")
     }else if(!password){
@@ -47,8 +52,6 @@ $(() => {
     }else if(password !== confPassword){
       validate("#conf-password", "Password doesn't match")
     }else{
-      $("input").removeClass("required")
-      validateMsg.text("")
       $.ajax(URL,{
         type:"POST",
         dataType:"json",
@@ -71,6 +74,6 @@ $(() => {
   toggleVisibility(confVisible, toggleConfPasswordV, $("#conf-password"), confVisible)
 
 
-  window.location.pathname == "/signup.html" ? $("#signup").css("color", "#AB520C")
+  window.location.pathname == "/index.html" ? $("#signup").css("color", "#AB520C")
   :$("#login").css("color", "#AB520C")
 })
