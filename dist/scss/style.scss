@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=swap');
+
+$dark-bg: #1B2026;
+$light-color: #BBAC95;
+$btn-hover: #8d8272;
+$color-active: #AB520C;
+$text-white: #fff;
+$text-validate: #E94747;
+$all-transition: all .3s ease-in;
+
+$breakpoint-tablet: 750px;
+$breakpoint-mobile: 460px;
+$breakpoint-medium: 1120px;
+
+html{
+  overflow-x: hidden;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a, input{
+  transition: $all-transition;
+}
+
+body{
+  font-family: 'Sansita', sans-serif;
+  display: flex;
+}
+
+a, h2{
+  text-decoration: none;
+  color: $light-color;
+}
+
+button{
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input{
+  color: $text-white;
+  font-size: 1rem;
+  outline: none;
+  background: transparent !important;
+  border: none;
+  border-bottom: 2px solid $light-color;
+  padding: 18px;
+  padding-left: 0;
+  width: 100%;
+  position: relative;
+
+  &::placeholder{
+    color: $text-white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  &:focus{
+    border-color: $color-active;
+  }
+}
+
+section{
+  width: 50%;
+  min-height: 100vh;
+}
+
+input.required{
+  border-color: $text-validate;
+}
+
+
+// -----------------------------left container------------------------------------
+
+.left-box{
+  background: url("../../img/pattern.jpg");
+}
+
+
+// ----------------------------left container-------------------------------------
+
+
+// ----------------------------left container-------------------------------------
+
+.right-box{
+  width: 75%;
+  background: $dark-bg;
+  box-shadow: inset 0px 0px 30px 2px rgb(19, 20, 20);
+  display: flex;
+  flex-direction: column;
+
+  &__submit{
+    position: relative;
+    margin-bottom: 0 !important;
+  }
+
+  &__validate{
+    font-size: 14px;
+    width: 100%;
+    position: absolute;
+    top: -10px;
+    text-align: center;
+    color: $text-validate;
+  }
+
+  &__password{
+    position: relative;
+
+    img{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      cursor: pointer;
+      transform: translateY(-50%);
+
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+  
+  &__navigation{
+    align-self: flex-end;
+    padding: 50px;
+
+    a{
+      padding-left: 35px;
+      &:hover{
+        color: $color-active;
+      }
+    }
+  }
+
+  &__form{
+    padding: 20px 0;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    flex-direction: column;
+    margin: auto;
+
+    h2{
+      padding-bottom: 35px;
+    }
+
+  }
+
+  form{
+    & > *{
+      margin-bottom: 35px;
+    }
+
+    button{
+      font-size: 1rem;
+      background: $light-color;
+      border: none;
+      width: 100%;
+      padding: 20px;
+      color: $text-white;
+      text-transform: uppercase;
+      border-radius: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-top: 15px;
+      margin-bottom: 0;
+
+      &:hover{
+        box-shadow: 0px 2px 6px 0px black;
+      }
+    }
+
+    a{
+      color: $text-white;
+      text-align: center;
+      letter-spacing: 2px;
+      padding-top: 16px;
+      display: block;
+
+      &:hover{
+        color: $color-active;
+      }
+    }
+  }
+}
+
+// ----------------------------left container-------------------------------------
+
+// ----------login-------------------------------
+
+section.success{
+  transition: $all-transition;
+  &.right-box{
+    width: 100%;
+    min-height: 100vh;
+
+    .right-box__form{
+      display: none;
+    }
+
+    .right-box__loged-in{
+      display: block;
+    }
+  }
+
+  &.left-box{
+    width: 0;
+  }
+}
+
+.right-box__loged-in{
+  display: none;
+  h2{
+    color: $light-color;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+  }
+}
+
+// ----------login-------------------------------
+
+
+// --------------------------- responsive ----------------------------------
+
+@media (max-width: $breakpoint-medium) {
+  .right-box{
+    // width: 75%;
+    
+    &__form{
+      width: 85%;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width:$breakpoint-mobile) {
+  .left-box{
+    display: none;
+  }
+
+  .right-box{
+    width: 100%;
+
+    &__navigation{
+      align-self: center;
+    }
+
+    &__form h2{
+      display: none;
+    }
+  }
+}
