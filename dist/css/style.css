@@ -154,6 +154,8 @@ input.required {
 
 .right-box__navigation a {
   padding-left: 35px;
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
 }
 
 .right-box__navigation a:hover {
