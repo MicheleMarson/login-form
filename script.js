@@ -8,7 +8,7 @@ $(() => {
   let togglePasswordV = false
   let toggleConfPasswordV = false
   const validateMsg = $(".right-box__validate")
-  const URL = "http://613dbc7b94dbd600172ab9bf.mockapi.io/login"
+  const URL = "https://613dbc7b94dbd600172ab9bf.mockapi.io/login"
 
 
   const toggleVisibility = (item, toggle, password, img) => {
