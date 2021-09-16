@@ -1,5 +1,5 @@
 $(() => {
-  let email, confPassword, password, phone = ""
+  let email = confPassword = password = phone = ""
   const visible = $("#visible")
   const confVisible = $("#conf-visible")
   const emailValidation = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
