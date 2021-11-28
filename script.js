@@ -62,7 +62,7 @@ $(() => {
         }, 
         success: function(data, status, jqXHR){
           $("section").addClass("success")
-          $(".right-box__loged-in h2").text(`You are loged in , Welcome ${email}`)
+          $(".right-box__loged-in h2").text(`You are loged in , Welcome ${email.split("@")[0]}`)
         },
         error: (jqXHR, status, throwErr) => console.log("fail")
       })
