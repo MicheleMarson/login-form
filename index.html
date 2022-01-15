@@ -1,48 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./script.js" defer></script>
-  <link rel="stylesheet" href="./dist/css/style.css">
-  <title>Login</title>
-</head>
-<body>
-  <!-- left section---------------------------------------->
-  <section class="left-box">
-  </section>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="text/javascript" src="config.js"></script>
+		<script src="./script.js" defer></script>
+		<script src="./weather.js" defer></script>
+		<link rel="stylesheet" href="./dist/css/style.css" />
+		<title>Login</title>
+	</head>
+	<body>
+		<div class="login">
+			<!-- left section---------------------------------------->
+			<section class="left-box"></section>
 
-  <!-- right section---------------------------------------->
-  <section class="right-box">
-    <div class="right-box__navigation">
-      <a id="login" href="login.html">Login</a>
-      <a id="signup" href="index.html">Signup</a>
-    </div>
-    <div class="right-box__loged-in">
-      <h2>You are loged in , Welcome</h2>
-    </div>
-    <div class="right-box__form">
-      <h2>Sign Up</h2>
-      <form id="signup" action="#">
-        <input autocomplete="true" id="email" name="email" type="text" placeholder="Email">
-        <div class="right-box__password">
-          <input  autocomplete="true" id="password" name="password" type="password" placeholder="Password">
-          <img id="visible" src="./img/visibility_off.svg" alt="">
-        </div>
-        <div class="right-box__password">
-          <input autocomplete="true" id="conf-password" name="conf-password" type="password" placeholder="Confirm password">
-          <img id="conf-visible" src="./img/visibility_off.svg" alt="">
-        </div>
-        <input autocomplete="true" id="phone" name="phone" type="number" placeholder="Phone number">
-        <div class="right-box__submit">
-          <button type="submit">Signup</button>
-          <p class="right-box__validate"></p>
-        </div>
-        <a href="#" class="right-box__pass">Forgot password?</a>
-      </form>
-    </div>
-  </section>
-</body>
+			<!-- right section---------------------------------------->
+			<section class="right-box">
+				<div class="right-box__navigation">
+					<a id="login" href="login.html">Login</a>
+					<a id="signup" href="index.html">Signup</a>
+				</div>
+				<div class="right-box__loged-in">
+					<h2>You are loged in , Welcome</h2>
+				</div>
+				<div class="right-box__form">
+					<h2>Sign Up</h2>
+					<form id="signup" action="#">
+						<input
+							autocomplete="true"
+							id="email"
+							name="email"
+							type="text"
+							placeholder="Email"
+						/>
+						<div class="right-box__password">
+							<input
+								autocomplete="true"
+								id="password"
+								name="password"
+								type="password"
+								placeholder="Password"
+							/>
+							<img id="visible" src="./img/visibility_off.svg" alt="" />
+						</div>
+						<div class="right-box__password">
+							<input
+								autocomplete="true"
+								id="conf-password"
+								name="conf-password"
+								type="password"
+								placeholder="Confirm password"
+							/>
+							<img id="conf-visible" src="./img/visibility_off.svg" alt="" />
+						</div>
+						<input
+							autocomplete="true"
+							id="phone"
+							name="phone"
+							type="number"
+							placeholder="Phone number"
+						/>
+						<div class="right-box__submit">
+							<button type="submit">Signup</button>
+							<p class="right-box__validate"></p>
+						</div>
+						<a href="#" class="right-box__pass">Forgot password?</a>
+					</form>
+				</div>
+			</section>
+		</div>
+		<!-- weather form -->
+		<section class="weather">
+			<h2>Check The Weather</h2>
+			<div class="weather-data">
+				<form id="get-weather" action="#">
+					<input
+						name="city"
+						id="city"
+						type="text"
+						placeholder="Enter city name..."
+					/>
+					<button type="submit">GET DATA</button>
+				</form>
+				<div class="data"></div>
+			</div>
+		</section>
+	</body>
 </html>
