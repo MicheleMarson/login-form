@@ -1,4 +1,5 @@
 $(() => {
+<<<<<<< HEAD
 	let email = (confPassword = password = phone = "");
 	const visible = $("#visible");
 	const confVisible = $("#conf-visible");
@@ -11,6 +12,18 @@ $(() => {
 	let toggleConfPasswordV = false;
 	const validateMsg = $(".right-box__validate");
 	const URL = "https://613dbc7b94dbd600172ab9bf.mockapi.io/login";
+=======
+  let email = confPassword = password = phone = ""
+  const visible = $("#visible")
+  const confVisible = $("#conf-visible")
+  const emailValidation = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+  const passwordValidation = /^(?=.*[a-z])(?=.*[0-9])(?=.{8,})/
+  const phoneValidation = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+  let togglePasswordV = false
+  let toggleConfPasswordV = false
+  const validateMsg = $(".right-box__validate")
+  const URL = "https://613dbc7b94dbd600172ab9bf.mockapi.io/login"
+>>>>>>> 255406e84a9079032bb0ad42ef1a15de20f84800
 
 	const toggleVisibility = (item, toggle, password, img) => {
 		item.click(() => {
@@ -39,8 +52,45 @@ $(() => {
 		phone = $("#phone").val();
 	});
 
+<<<<<<< HEAD
 	$("form#signup").submit((e) => {
 		e.preventDefault();
+=======
+  $("form#signup").submit((e) =>{
+    e.preventDefault()
+    
+    //  validation --------------
+    $("section").removeClass("success")
+    if(!email){
+      validate("#email", "Email required")
+      
+    }else if(!email.match(emailValidation)){
+      validate("#email", "Email not valid")
+    }else if(!password){
+      validate("#password", "Password required")
+    }else if(!password.match(passwordValidation)){
+      validate("#password", "Password not valid")
+    }else if(password !== confPassword){
+      validate("#conf-password", "Password doesn't match")
+    }else{
+      $.ajax(URL,{
+        type:"POST",
+        dataType:"json",
+        data:{
+          email,
+          password,
+          phone
+        }, 
+        success: function(data, status, jqXHR){
+          $("section").addClass("success")
+          $(".right-box__loged-in h2").text(`You are loged in , Welcome ${email.split("@")[0]}`)
+        },
+        error: (jqXHR, status, throwErr) => console.log("fail")
+      })
+      
+    }
+  })
+>>>>>>> 255406e84a9079032bb0ad42ef1a15de20f84800
 
 		//  validation --------------
 		$("section").removeClass("success");
