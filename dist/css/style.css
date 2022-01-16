@@ -376,6 +376,12 @@ section.success.left-box {
 }
 
 @media (max-width: 1120px) {
+  .login {
+    display: block;
+  }
+  .login > section {
+    width: 100%;
+  }
   .right-box__form {
     width: 85%;
     margin: auto;

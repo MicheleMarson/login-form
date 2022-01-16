@@ -334,6 +334,12 @@ section.success {
 // --------------------------- responsive ----------------------------------
 
 @media (max-width: $breakpoint-medium) {
+	.login {
+		display: block;
+		& > section {
+			width: 100%;
+		}
+	}
 	.right-box {
 		// width: 75%;
 
