@@ -4,14 +4,12 @@ $(() => {
 
 	$("form#get-weather").submit(function (e) {
 		e.preventDefault();
-		let city = "";
-		let html = "";
+		let city = html = "";
 		const dataDiv = $("div.data");
 		city = $("input#city").val();
 		const API_URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`;
 		if (city !== "") {
 			$.get(API_URL, function (data) {
-				console.log(data);
 				let { current, location } = data;
 				html = `
         <div class="data-temp">
