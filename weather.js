@@ -12,6 +12,7 @@ $(() => {
 			$.get(API_URL, function (data) {
 				let { current, location } = data;
 				html = `
+				<p>${city}</p>
         <div class="data-temp">
           <p>${current.temp_c}°</p>
           <img src="${current.condition.icon}" />
