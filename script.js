@@ -1,3 +1,4 @@
+//updated
 $(() => {
 	let email = (confPassword = password = phone = "");
 	const visible = $("#visible");
